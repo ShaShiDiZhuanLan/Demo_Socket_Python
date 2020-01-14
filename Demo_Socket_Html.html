@@ -1,0 +1,45 @@
+<!-- Websocket 的使用示例 -->
+<!-- Author: ZhenYuSha -->
+<!-- Create Time: 2019-1-14 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试Socket——ws://127.0.0.1:8181</title>
+    <script>
+        var socket;
+        if ("WebSocket" in window) {
+            var ws = new WebSocket("ws://127.0.0.1:8181/test");
+            socket = ws;
+            ws.onopen = function() {
+                console.log('连接成功');
+                alert("连接成功, 请输入账号和密码");
+            };
+            ws.onmessage = function(evt) {
+                var received_msg = evt.data;
+                document.getElementById("showMes").value+=received_msg+"\n";
+            };
+            ws.onclose = function() {
+                alert("断开了连接");
+            };
+        } else {
+            alert("浏览器不支持WebSocket");
+        }
+        function sendMeg(){
+            var message=document.getElementById("name").value+":"+document.getElementById("mes").value;
+            document.getElementById("showMes").value+=message+"\n\n";
+            socket.send(message);
+        }
+    </script>
+</head>
+<body>
+    <textarea rows="3" cols="30" id="showMes" style="width:300px;height:500px;"></textarea>
+    <br/>
+    <label>名称</label>
+    <input type="text" id="name"/>
+    <br/>
+    <label>消息</label>
+    <input type="text" id="mes"/>
+    <button onclick="sendMeg();">发送</button>
+</body>
+</html>
