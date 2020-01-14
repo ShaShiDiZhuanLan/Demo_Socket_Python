@@ -5,7 +5,8 @@ Websocket 的使用示例（Python3和Html的源代码）
 开发者：沙振宇（沙师弟专栏） <BR/>
 创建时间：2020-1-14<BR/>
 最后一次更新时间：2020-1-14<BR/>
-CSDN博客地址：https://shazhenyu.blog.csdn.net<BR/> 
+CSDN博客名称：Python开发 之 Websocket 的使用示例
+CSDN博客地址：https://shazhenyu.blog.csdn.net/article/details/103977632<BR/> 
 <BR/> 
 # 3、使用方法
 先安装websockets <BR/>
